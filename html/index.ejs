@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		html, body, div, span, object, iframe,h1, h2,
+		h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+		em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+		ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+		tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+		figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+		audio, video {
+		    margin:0;
+		    padding:0;
+		    border:0;
+		    outline:0;
+		    font-size:100%;
+		    vertical-align:baseline;
+		    background:transparent;
+		    outline-style:none;/*FF*/
+		}
+
+		body {
+		    line-height:1;
+		}
+
+		a{
+		    margin:0;
+		    padding:0;
+		    border:0;
+		    font-size:100%;
+		    vertical-align:baseline;
+		    background:transparent;
+
+		}
+		a:hover,a:focus{
+		    text-decoration:none;
+		    bblr:expression(this.onFocus=this.blur());/*IE*/
+		    outline-style:none;/*FF*/
+		    }
+		table {
+		    border-collapse:collapse;
+		    border-spacing:0;
+		}
+
+		input, select {
+		    vertical-align:middle;
+		}
+		li{
+			list-style: none;
+		}
+		/*css为clearfix，清除浮动*/
+		.clearfix::before,
+		.clearfix::after{
+		    content: "";
+		    height: 0;
+		    line-height: 0;
+		    display: block;
+		    visibility: hidden;
+		    clear: both;
+		}
+		.clearfix:after{clear:both;}
+		.clearfix{
+		    *zoom:1;/*IE/7/6*/
+		}
+		/**/
+		div{
+			margin-top: 50px;
+		}
+		div ul li{
+			float:left;
+			margin-left: 50px;
+			display: inline-block;
+			width: 29%;
+			margin-top: 20px;
+		}
+		div ul li p{
+			text-align: center;
+			margin-top: 15px;
+		}
+		div>a{
+			border: 1px solid #ddd;
+			padding: 5px 10px;
+			text-decoration: none;
+			color:#000;
+			margin-left: 500px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul class="clearfix">
+			<% for(var i=0;i<covers.length;i++){ %>
+				<li>
+					<a href="<%= dirs[i] %>" target="_blank">
+						<img src="<%= covers[i] %>" width="100%">
+						<p><%= dirs[i].substr(1) %></p>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+		<div>
+			<a href="/admin" title="">上传文件</a>
+		</div>
+	</div>
+</body>
+</html>

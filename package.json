@@ -1,0 +1,24 @@
+{
+  "name": "album_original",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "*",
+    "formidable": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/waiaan/album_original/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/waiaan/album_original.git"
+  },
+  "homepage": "https://github.com/waiaan/album_original",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		html, body, div, span, object, iframe,h1, h2,
+		h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn,
+		em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd,
+		ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+		tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption,
+		figure, footer, header, hgroup, menu, nav, section, summary,time, mark,
+		audio, video {
+		    margin:0;
+		    padding:0;
+		    border:0;
+		    outline:0;
+		    font-size:100%;
+		    vertical-align:baseline;
+		    background:transparent;
+		    outline-style:none;/*FF*/
+		}
+
+		body {
+		    line-height:1;
+		}
+
+		a{
+		    margin:0;
+		    padding:0;
+		    border:0;
+		    font-size:100%;
+		    vertical-align:baseline;
+		    background:transparent;
+
+		}
+		a:hover,a:focus{
+		    text-decoration:none;
+		    bblr:expression(this.onFocus=this.blur());/*IE*/
+		    outline-style:none;/*FF*/
+		    }
+		table {
+		    border-collapse:collapse;
+		    border-spacing:0;
+		}
+
+		input, select {
+		    vertical-align:middle;
+		}
+		li{
+			list-style: none;
+		}
+		/*css为clearfix，清除浮动*/
+		.clearfix::before,
+		.clearfix::after{
+		    content: "";
+		    height: 0;
+		    line-height: 0;
+		    display: block;
+		    visibility: hidden;
+		    clear: both;
+		}
+		.clearfix:after{clear:both;}
+		.clearfix{
+		    *zoom:1;/*IE/7/6*/
+		}
+		div{
+			margin-top: 100px;
+		}
+		form{
+			text-align: center;
+		}
+		label{
+			margin-top: 20px;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			<label>请选择文件夹：
+				<select name="uploadFolder" id="dirs">
+					<% for(var i=0;i<dirs.length;i++){ %>
+						<option value="<%= dirs[i]%>"><%= dirs[i]%></option>
+					<% } %>
+					<option value="">新建文件夹</option>
+				</select>
+			</label>
+			<br>
+			<label id="newFolder" style="display: none;">请输入新文件夹的名称：<input type="text" name="newFolder"></label>
+			<br>
+			<label><input type="file" name="file"></label>
+			<br>
+			<label><input type="submit"></label>
+		</form>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$("#dirs").change(function(){
+			if($(this).val()===""){
+				$("#newFolder").show();
+			}else{
+				$("#newFolder").hide();
+			}
+		})
+	</script>
+</body>
+</html>
